@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>全选和反选</title>
+	<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+	<ul>
+		<li><a href="" id="all">全选</a>  <a href="" id="reverse">反选</a></li>
+		<li><input type="checkbox" name="hobby"></li>
+		<li><input type="checkbox" name="hobby"></li>
+		<li><input type="checkbox" name="hobby"></li>
+		<li><input type="checkbox" name="hobby"></li>
+		<li><input type="checkbox" name="hobby"></li>
+	</ul>
+	<script>
+		//全选功能\\
+		$('#all').click(function(){
+			// [input,input,input]
+			$('input[name=hobby]').each(function(k,v){
+				v.checked = true;
+			});
+			return false;
+		});
+
+		$('#reverse').click(function(e){
+			//
+			$('input[name=hobby]').each(function(k,v){
+				this.checked = !this.checked;
+			});
+
+			// return false;
+			e.preventDefault();
+		});	
+
+	</script>
+</body>
+</html>
